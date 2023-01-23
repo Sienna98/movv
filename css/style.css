@@ -102,7 +102,7 @@ header .nav .store a:hover {
 }
 header .nav .store a:first-child::before {
   content: "";
-  background-image: url(https://127.0.0.1:5501/movv/img/ic_sp_store.png);
+  background-image: url(../img/ic_sp_store.png);
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -118,7 +118,7 @@ header .nav .store a:last-child::before {
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url(https://127.0.0.1:5501/movv/img/ic_sp_store.png);
+  background-image: url(../img/ic_sp_store.png);
   background-repeat: no-repeat;
   background-position: -20px 0;
   left: 25px;
