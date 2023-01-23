@@ -1,0 +1,393 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #090D2B;
+}
+
+body * {
+  box-sizing: border-box;
+  color: #333;
+  font-size: 62.5%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.blind {
+  display: none;
+}
+
+#wrap {
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 50px;
+  transition: all 0.3s;
+}
+header .nav h1 {
+  background-image: url(https://www.movvcorp.com/images/logo_w.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 280px;
+  height: 30px;
+}
+header .nav .menu {
+  display: flex;
+  width: 700px;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+header .nav .menu li {
+  flex-grow: 1;
+  text-align: center;
+}
+header .nav .menu li a {
+  font-size: 1rem;
+  color: #b6b6b6;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: color 0.2s;
+}
+header .nav .menu li:hover a {
+  color: #Fff;
+}
+header .nav .store {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav .store a {
+  border: 1px dashed #5e5d5d;
+  border-radius: 30px;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  padding-left: 20px;
+  line-height: 50px;
+  margin-left: 5px;
+  transition: all 0.2s;
+  font-size: 0.75rem;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  position: relative;
+}
+header .nav .store a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+header .nav .store a:first-child::before {
+  content: "";
+  background-image: url(http://127.0.0.1:5501/movv/img/ic_sp_store.png);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+}
+header .nav .store a:last-child::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url(http://127.0.0.1:5501/movv/img/ic_sp_store.png);
+  background-repeat: no-repeat;
+  background-position: -20px 0;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .nav.on {
+  height: 90px;
+  background-color: #fff;
+  border-bottom: 1px solid #BCC1E5;
+}
+header .nav.on h1 {
+  background-image: url(https://www.movvcorp.com/images/logo_b.png);
+}
+header .nav.on .menu li a {
+  color: #222;
+}
+header .nav.on .store a {
+  color: #222;
+  border-color: #c4c4c4;
+}
+header .nav.on .store a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+header .nav.on .store a:last-child::before {
+  background-position: -40px 0;
+  left: 25px;
+}
+
+.main {
+  position: fixed;
+  width: 100%;
+}
+.main .main_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main .main_wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%;
+  background-image: linear-gradient(90deg, #090d2b 40%, rgba(9, 13, 43, 0) 100%);
+  z-index: 9;
+}
+.main .main_wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 25%;
+  background-image: linear-gradient(-90deg, #090d2b 40%, rgba(9, 13, 43, 0) 100%);
+  z-index: 9;
+}
+.main .main_wrap .text_area {
+  position: relative;
+  width: 650px;
+  margin: 130px auto 60px;
+}
+.main .main_wrap .text_area h2 {
+  font-size: 1.3rem;
+  color: #2FECA9;
+}
+.main .main_wrap .text_area h3 {
+  font-size: 3.7rem;
+  color: #fff;
+  line-height: 1.2;
+}
+.main .main_wrap .text_area h4 {
+  font-size: 1.3rem;
+  color: #9AA0BF;
+  padding-top: 20px;
+}
+.main .main_wrap .background_area {
+  position: relative;
+  height: 380px;
+}
+.main .main_wrap .background_area .cloud {
+  background-image: url(https://www.movvcorp.com/images/bg_cloud.png);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 125px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: cloud 10s infinite cubic-bezier(1, 1, 1, 1);
+          animation: cloud 10s infinite cubic-bezier(1, 1, 1, 1);
+  background-size: auto 100%;
+}
+.main .main_wrap .background_area .back_city {
+  background-image: url(https://www.movvcorp.com/images/bg_city1.png);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 201px;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+}
+.main .main_wrap .background_area .front_city {
+  background-image: url(https://www.movvcorp.com/images/bg_city2.png);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 98px;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+}
+.main .main_wrap .background_area div::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+.main .main_wrap .car_area {
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main .main_wrap .car_area .car_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+}
+.main .main_wrap .car_area .car_info .text {
+  position: relative;
+}
+.main .main_wrap .car_area .car_info .text dt {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2FECA9;
+}
+.main .main_wrap .car_area .car_info .text dd {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+.main .main_wrap .car_area .car_info .text::after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 1px;
+  height: 200px;
+  position: absolute;
+  top: 110%;
+  left: 5px;
+}
+.main .main_wrap .car_area .car {
+  background: url("https://www.movvcorp.com/images/img_car.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 780px;
+  height: 290px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 10;
+}
+.main .main_wrap .car_area .car .wheels {
+  background-image: url(https://www.movvcorp.com/images/img_tire.png);
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  position: absolute;
+  animation: wheels_turn 1s linear reverse infinite;
+}
+.main .main_wrap .car_area .car .wheels.nb1 {
+  bottom: 33px;
+  left: 138px;
+}
+.main .main_wrap .car_area .car .wheels.nb2 {
+  bottom: 29px;
+  right: 121px;
+}
+.main .main_wrap .mouse {
+  background-image: url(https://www.movvcorp.com/images/scroll.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 27px;
+  height: 43px;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: mouse 1.5s ease-in-out infinite;
+          animation: mouse 1.5s ease-in-out infinite;
+}
+
+.gap_box {
+  height: calc(100vh);
+}
+
+.sub {
+  background-color: #fff;
+  width: 100%;
+  height: 2000px;
+  position: relative;
+  margin-top: 300px;
+}
+.sub::before {
+  content: "";
+  display: block;
+  width: calc(100% + 50%);
+  height: 400px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 200px);
+  transform: rotate(-4deg) translateX(-50%);
+}
+
+@-webkit-keyframes wheels_turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheels_turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes mouse {
+  0% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-40%);
+  }
+}
+@keyframes mouse {
+  0% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-40%);
+  }
+}
+@-webkit-keyframes cloud {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes cloud {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}/*# sourceMappingURL=style.css.map */
