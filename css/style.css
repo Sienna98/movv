@@ -65,7 +65,7 @@ header .nav .menu li {
 }
 header .nav .menu li a {
   font-size: 1rem;
-  color: #b6b6b6;
+  color: rgb(182, 182, 182);
   font-weight: bold;
   display: block;
   width: 100%;
@@ -81,7 +81,7 @@ header .nav .store {
   align-items: center;
 }
 header .nav .store a {
-  border: 1px dashed #5e5d5d;
+  border: 1px dashed rgb(94, 93, 93);
   border-radius: 30px;
   text-align: center;
   width: 170px;
@@ -102,7 +102,7 @@ header .nav .store a:hover {
 }
 header .nav .store a:first-child::before {
   content: "";
-  background-image: url(../img/ic_sp_store.png);
+  background-image: url(https://127.0.0.1:5501/movv/img/ic_sp_store.png);
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -118,7 +118,7 @@ header .nav .store a:last-child::before {
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url(../img/ic_sp_store.png);
+  background-image: url(https://127.0.0.1:5501/movv/img/ic_sp_store.png);
   background-repeat: no-repeat;
   background-position: -20px 0;
   left: 25px;
@@ -138,7 +138,7 @@ header .nav.on .menu li a {
 }
 header .nav.on .store a {
   color: #222;
-  border-color: #c4c4c4;
+  border-color: rgb(196, 196, 196);
 }
 header .nav.on .store a:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -164,7 +164,7 @@ header .nav.on .store a:last-child::before {
   left: 0;
   height: 100%;
   width: 25%;
-  background-image: linear-gradient(90deg, #090d2b 40%, rgba(9, 13, 43, 0) 100%);
+  background-image: linear-gradient(90deg, rgb(9, 13, 43) 40%, rgba(9, 13, 43, 0) 100%);
   z-index: 9;
 }
 .main .main_wrap::after {
@@ -174,7 +174,7 @@ header .nav.on .store a:last-child::before {
   right: 0;
   height: 100%;
   width: 25%;
-  background-image: linear-gradient(-90deg, #090d2b 40%, rgba(9, 13, 43, 0) 100%);
+  background-image: linear-gradient(-90deg, rgb(9, 13, 43) 40%, rgba(9, 13, 43, 0) 100%);
   z-index: 9;
 }
 .main .main_wrap .text_area {
@@ -208,8 +208,8 @@ header .nav.on .store a:last-child::before {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: cloud 10s infinite cubic-bezier(1, 1, 1, 1);
-          animation: cloud 10s infinite cubic-bezier(1, 1, 1, 1);
+  -webkit-animation: cloud 10s infinite linear;
+          animation: cloud 10s infinite linear;
   background-size: auto 100%;
 }
 .main .main_wrap .background_area .back_city {
@@ -220,6 +220,9 @@ header .nav.on .store a:last-child::before {
   position: absolute;
   bottom: 10%;
   left: 0;
+  -webkit-animation: city 20s Infinite linear;
+          animation: city 20s Infinite linear;
+  background-size: auto 100%;
 }
 .main .main_wrap .background_area .front_city {
   background-image: url(https://www.movvcorp.com/images/bg_city2.png);
@@ -229,6 +232,9 @@ header .nav.on .store a:last-child::before {
   position: absolute;
   bottom: 10%;
   left: 0;
+  -webkit-animation: city 10s linear Infinite;
+          animation: city 10s linear Infinite;
+  background-size: auto 100%;
 }
 .main .main_wrap .background_area div::before {
   content: "";
@@ -282,6 +288,8 @@ header .nav.on .store a:last-child::before {
   margin-top: 50px;
   position: relative;
   z-index: 10;
+  -webkit-animation: car 1.5s ease-out;
+          animation: car 1.5s ease-out;
 }
 .main .main_wrap .car_area .car .wheels {
   background-image: url(https://www.movvcorp.com/images/img_tire.png);
@@ -314,7 +322,7 @@ header .nav.on .store a:last-child::before {
 }
 
 .gap_box {
-  height: calc(100vh);
+  height: 100vh;
 }
 
 .sub {
@@ -327,7 +335,7 @@ header .nav.on .store a:last-child::before {
 .sub::before {
   content: "";
   display: block;
-  width: calc(100% + 50%);
+  width: 150%;
   height: 400px;
   background-color: #fff;
   position: absolute;
@@ -389,5 +397,37 @@ header .nav.on .store a:last-child::before {
   }
   100% {
     background-position: 100% 0;
+  }
+}
+@-webkit-keyframes city {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes city {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@-webkit-keyframes car {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes car {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }/*# sourceMappingURL=style.css.map */

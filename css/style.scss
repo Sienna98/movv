@@ -208,7 +208,7 @@ header {
         // &::before {
         //   background-image: url(https://www.movvcorp.com/images/bg_cloud.png);
         // }
-        animation: cloud 10s infinite cubic-bezier(1, 1, 1, 1);
+        animation: cloud 10s infinite linear;
         background-size: auto 100%;
       }
       .back_city {
@@ -222,6 +222,8 @@ header {
         // &::before {
         //   background-image: url(https://www.movvcorp.com/images/bg_city1.png);
         // }
+        animation: city 20s Infinite linear;
+        background-size: auto 100%;
       }
       .front_city {
         background-image: url(https://www.movvcorp.com/images/bg_city2.png);
@@ -234,6 +236,8 @@ header {
         // &::before {
         //   background-image: url(https://www.movvcorp.com/images/bg_city2.png);
         // }
+        animation: city 10s linear Infinite;
+        background-size: auto 100%;
       }
       div {
         &::before {
@@ -289,6 +293,7 @@ header {
         margin-top: 50px;
         position: relative;
         z-index: 10;
+        animation: car 1.5s ease-out;
         .wheels {
           background-image: url(https://www.movvcorp.com/images/img_tire.png);
           width: 80px;
@@ -368,5 +373,21 @@ header {
   }
   100% {
     background-position: 100% 0;
+  }
+}
+@keyframes city {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes car {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
